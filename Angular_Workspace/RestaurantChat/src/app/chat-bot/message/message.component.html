@@ -1,0 +1,11 @@
+<div *ngIf="message?.owner" class="content-message right-content">
+    <p [ngStyle]="{'background-color': colorBackRight, 'color': colorFontRight}">
+        {{message?.text}}
+    </p>
+</div>
+
+<div *ngIf="!message?.owner" class="content-message left-content">
+    <p [ngStyle]="{'background-color': colorBackLeft, 'color': colorFontLeft}">
+        {{message?.text}}
+    </p>
+</div>

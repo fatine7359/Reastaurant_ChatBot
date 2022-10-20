@@ -1,0 +1,22 @@
+import { Message } from './../../../models/Message';
+import { Component, Input, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-message',
+  templateUrl: './message.component.html',
+  styleUrls: ['./message.component.css']
+})
+export class MessageComponent implements OnInit {
+
+  @Input() message?: Message;
+  @Input('colorBackRight') colorBackRight?: string;
+  @Input('colorFontRight') colorFontRight?: string;
+  @Input('colorBackLeft') colorBackLeft?: string;
+  @Input('colorFontLeft') colorFontLeft?: string;
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}

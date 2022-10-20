@@ -7,3 +7,15 @@
   z-index: 999;
   border-radius: 50px;
 }
+
+.chat {
+  position: fixed;
+  /* bottom: 15px;
+  right: 20px; */
+  top: 60px;
+  left: 830px;
+  /* width: 100px;
+  height: 400px; */
+  /* z-index: 999; */
+  background-color: white;
+}

@@ -1,0 +1,19 @@
+/* for app.component.css */
+.chat-container {
+    width: 300px;
+    height: 400px;
+    margin: auto;
+    /* margin-top: 50px; */
+    border: 1px solid black;
+    padding: 0px;
+}
+
+.chat-header {
+    width: 300px;
+    
+    /* margin: auto; */
+    /* margin-top: 50px; */
+    /* border: 1px solid black; */
+    padding: 0px;
+    /* border-radius: 100px; */
+}
