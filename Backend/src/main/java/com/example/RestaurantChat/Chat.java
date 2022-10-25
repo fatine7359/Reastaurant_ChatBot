@@ -78,12 +78,15 @@ public class Chat {
 
     public static void main(String[] args) throws FileNotFoundException, IOException, InterruptedException {
 
+
         // Train categorizer model to the training data we created.
         DoccatModel model = categorizerModelTraining.trainCategorizerModel();
 
         // Take chat inputs from console (user) in a loop.
         Scanner scanner = new Scanner(System.in);
         while (true) {
+
+
 
             // Get chat input from user.
             System.out.println("##### You:");
@@ -142,6 +145,11 @@ public class Chat {
 
                 if(lang.equals("French")){
 
+
+
+                    // Train categorizer model to the training data we created.
+                    DoccatModel modelFr = categorizerModelTraining.trainCategorizerModelFr();
+
                     // Separate words from each sentence using tokenizer.
                     String[] tokens = tokenizing.tokenizeSentenceFr(sentence);
                     System.out.println(tokens[0]);
@@ -154,7 +162,7 @@ public class Chat {
 
                     // Determine BEST category using lemmatized tokens used a mode that we trained
                     // at start.
-                    String category = categoryDetection.detectCategory(model, lemmas);
+                    String category = categoryDetection.detectCategory(modelFr, lemmas);
 
                     // Get predefined answer from given category & add to answer.
 
