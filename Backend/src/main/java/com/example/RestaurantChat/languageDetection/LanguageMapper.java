@@ -8,9 +8,7 @@ import java.util.HashMap;
 public class LanguageMapper {
 
         public String getLanguage(String langCode) throws IOException {
-
             HashMap<String, String> langMap = readToHashmap();
-
             return langMap.get(langCode);
 
         }
@@ -27,6 +25,5 @@ public class LanguageMapper {
             in.close();
 
             return map;
-
         }
 }

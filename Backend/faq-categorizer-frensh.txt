@@ -1,4 +1,4 @@
-greeting	 hi hi. hello ça va ? hey . comment ça va? Bonjour Bonsoir Bonne apres-midi
+greeting	 ça va ? comment ça va? Bonjour Bonsoir Bonne apres-midi
 conversation-continue	 ok wow c'est bon oh c'est vrai ? oh ohh c'est genial c'est tres bon en vrai hmm ok je pense hm hmmm hmmmmm
 price-inquiry	 Quel est le prix ? Combien ça coute? c'est combien ? 
 menu-inquiry	 Qu'est ce que vous avez sur le menu ? Quels plats vous proposez ? Q'est ce que vous proposez dans ce restau ?

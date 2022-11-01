@@ -3,6 +3,7 @@ export class Message {
     date: string;
     owner: boolean;
 
+
     constructor(text: string, date: string, owner: boolean){
 
         this.text = text;

@@ -29,8 +29,6 @@ public class PostTagsDetection {
     }
 
     public String[] detectPOSTagsFr(String[] tokens) throws IOException {
-        // Better to read file once at start of program & store model in instance
-        // variable. but keeping here for simplicity in understanding.
         try (InputStream modelIn = new FileInputStream("fr-pos-ftb-morpho.bin")) {
 
             // Initialize POS tagger tool

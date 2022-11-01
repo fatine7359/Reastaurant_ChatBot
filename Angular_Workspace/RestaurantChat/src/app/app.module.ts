@@ -9,13 +9,15 @@ import { FooterComponent } from './sharepage/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { AboutComponent } from './pages/about/about.component';
-
-
-
+import { ServicesModule } from './chat-bot/services/services.module';
 
 import { MatIconModule } from '@angular/material/icon';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { MessagingService } from './chat-bot/services/messaging.service';
+
 
 @NgModule({
   declarations: [
@@ -26,16 +28,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MenuComponent,
     AboutComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        MatIconModule,
-        ChatBotModule,
-        FontAwesomeModule,
-        BrowserAnimationsModule,
-
-    ],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MatIconModule,
+    ChatBotModule,
+    FontAwesomeModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    ServicesModule,
+    FormsModule,
+    
+  
+  
+  ],
+  providers: [MessagingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

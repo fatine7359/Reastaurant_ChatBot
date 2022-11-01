@@ -1,5 +1,5 @@
 /* for chat.component.css */
-.list-messages {
+#list-messages {
     display: flex;
     flex-direction: column;
     height: 88%;

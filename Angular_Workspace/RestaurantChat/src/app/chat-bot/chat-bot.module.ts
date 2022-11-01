@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MessageComponent } from './message/message.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
 import { HeaderComponent } from './header/header.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -18,7 +19,8 @@ import { HeaderComponent } from './header/header.component';
     ChatbotComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
   ]
 })
 export class ChatBotModule { }

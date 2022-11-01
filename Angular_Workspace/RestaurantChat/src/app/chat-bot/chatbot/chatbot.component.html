@@ -2,7 +2,8 @@
     <app-header></app-header>
     <div class="center chat-container container">
         <app-chat [messages]="messages" [colorBackRight]="colorBackRight" [colorFontRight]="colorFontRight"
-        [colorBackLeft]="colorBackLeft" [colorFontLeft]="colorFontLeft" class="center"></app-chat>
+        [colorBackLeft]="colorBackLeft" [colorFontLeft]="colorFontLeft" class="center" (msgSent)="getResponse($event)"></app-chat>
+        <!-- (msgSent)="getResponse($event)" -->
     </div>
 
 </div>
