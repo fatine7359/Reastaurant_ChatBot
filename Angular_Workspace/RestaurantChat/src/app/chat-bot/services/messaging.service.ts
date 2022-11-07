@@ -10,7 +10,7 @@ import { Message } from 'src/models/Message';
 export class MessagingService {
 
   constructor( private http :HttpClient) { }
-  
+
 
   // options: {
   //   headers?: HttpHeaders | {[header: string]: string | string[]},
@@ -38,9 +38,9 @@ export class MessagingService {
       res.owner = response.owner;
     },
     error=>{
-      console.log(error);  
+      console.log(error);
     });
-    
+
     return res;
   }
 }

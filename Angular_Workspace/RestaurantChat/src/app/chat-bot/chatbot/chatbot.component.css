@@ -15,10 +15,13 @@
 
 .chat-header {
     width: 300px;
-    
+
     /* margin: auto; */
     /* margin-top: 50px; */
     /* border: 1px solid black; */
     padding: 0px;
-    /* border-radius: 100px; */
+    border-radius: 10px;
+}
+.app-header{
+  border-radius: 10px;
 }

@@ -5,9 +5,7 @@ import com.example.RestaurantChat.categorizerModelTraining.CategorizerModelTrain
 import com.example.RestaurantChat.categoryDetection.CategoryDetection;
 import com.example.RestaurantChat.languageDetection.LanguageDetector;
 import com.example.RestaurantChat.models.Message;
-import com.example.RestaurantChat.openNlpOperations.OpenNlpOperations;
-import com.example.RestaurantChat.openNlpOperations.OpenNlpOperationsFrench;
-import com.example.RestaurantChat.posTagsDetection.PostTagsDetection;
+
 import com.example.RestaurantChat.sentenceDetection.SentenceDetection;
 import com.example.RestaurantChat.tokenization.Tokenizing;
 import opennlp.tools.doccat.DoccatModel;

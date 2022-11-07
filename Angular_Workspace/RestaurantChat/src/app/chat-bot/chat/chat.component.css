@@ -22,7 +22,7 @@
     justify-content: space-between;
     border-top: 2px solid grey;
     height: 12%;
-    
+
 }
 
 .input-text-message {
@@ -35,7 +35,7 @@
 .input-send {
     color: red;
     width: 20%;
-    
+
 }
 
 .send{
@@ -50,11 +50,14 @@
     margin-top: 7px;
     margin-right: 20px;
     /* vertical-align: -.125em; */
-    color: aquamarine;
+    color: white;
   }
 
   .icon{
     display: flex;
     /* justify-content: center; */
     border: 0.5px;
+  }
+  .button{
+    color: white;
   }
