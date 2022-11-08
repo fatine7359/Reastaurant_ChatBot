@@ -16,7 +16,8 @@
 
 .chatIcon img{
     width: 48px;
-    height: 60px;
+    height: 57px;
+    margin-left: 10px;
 
 }
 
@@ -26,8 +27,15 @@
 }
 
 .first{
+    width: 200px;
     font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
+/* .icon {
+    margin-left: 5px;
+} */
 
 .second {
     font-weight: lighter;
