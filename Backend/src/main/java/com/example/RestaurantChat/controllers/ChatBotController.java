@@ -14,7 +14,6 @@ public class ChatBotController {
 
     private ProcessingMsgsService processingMsgsService;
 
-
     public ChatBotController(ProcessingMsgsService receivingMsgsService) {
         this.processingMsgsService = receivingMsgsService;
     }

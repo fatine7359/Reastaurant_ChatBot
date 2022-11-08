@@ -28,6 +28,8 @@
 .input-text-message {
     height: 100%;
     width: 80%;
+    /* background-color: #343a40;
+    color: white; */
 }
 
 .input-send {
@@ -42,7 +44,8 @@
     border: 5px;
 }
 
-.fontawesomesvg {width: 1.5em;
+.fontawesomesvg {
+    width: 1.5em;
     height: 1.5em;
     margin-top: 7px;
     margin-right: 20px;
@@ -50,7 +53,8 @@
     color: aquamarine;
   }
 
-  /* .icon{
+  .icon{
     display: flex;
-    justify-content: center;
-  } */
+    /* justify-content: center; */
+    border: 0.5px;
+  }

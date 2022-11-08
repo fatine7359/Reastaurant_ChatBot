@@ -21,18 +21,13 @@ import java.util.Map;
 public class ProcessingMsgsService {
 
     private CategorizerModelTraining categorizerModelTraining = new CategorizerModelTraining();
-    private CategoryDetection categoryDetection = new CategoryDetection();
-    private Lemmatization lemmatization = new Lemmatization();
     private SentenceDetection sentenceDetection = new SentenceDetection();
-    private Tokenizing tokenizing = new Tokenizing();
-    private PostTagsDetection postTagsDetection = new PostTagsDetection();
     private LanguageDetector languageDetector = new LanguageDetector();
+
+    private ProcessingEnglishMsgsService processingEnglishMsgsService = new ProcessingEnglishMsgsService();
+    private ProcessingFrenchMsgsService processingFrenchMsgsService = new ProcessingFrenchMsgsService();
     private static Map<String, String> questionAnswer = new HashMap<>();
     private static Map<String, String> questionAnswerFr = new HashMap<>();
-
-
-    private OpenNlpOperations openNlpOperations = new OpenNlpOperations();
-    private OpenNlpOperationsFrench openNlpOperationsFrench = new OpenNlpOperationsFrench();
 
     /*
      * Define answers for each given category.
@@ -96,46 +91,15 @@ public class ProcessingMsgsService {
         for (String sentence : sentences) {
 
             if (lang.equals("English")) {
-
-                // Separate words from each sentence using tokenizer.
-                String[] tokens = tokenizing.tokenizeSentence(sentence);
-
-                // Tag separated words with POS tags to understand their gramatical structure.
-                String[] posTags = postTagsDetection.detectPOSTags(tokens);
-
-                // Lemmatize each word so that its easy to categorize.
-                String[] lemmas = lemmatization.lemmatizeTokens(tokens, posTags);
-
-                // Determine category using lemmatized tokens used a mode that we trained
-                // at start.
-                String category = categoryDetection.detectCategory(model, lemmas);
-
+                String category = processingEnglishMsgsService.processEnglishMsgs(sentence, model);
                 // Get predefined answer from given category & add to answer.
                 answer = answer + " " + questionAnswer.get(category);
-
             }
 
             if(lang.equals("French")){
-
-                // Train categorizer model to the training data we created.
-                DoccatModel modelFr = categorizerModelTraining.trainCategorizerModelFr();
-
-                // Separate words from each sentence using tokenizer.
-                String[] tokens = tokenizing.tokenizeSentenceFr(sentence);
-
-                // Tag separated words with POS tags to understand their gramatical structure.
-                String[] posTags = postTagsDetection.detectPOSTagsFr(tokens);
-
-                // Lemmatize each word so that its easy to categorize.
-                String[] lemmas = lemmatization.lemmatizeTokens(tokens, posTags);
-
-                // Determine category using lemmatized tokens used a mode that we trained
-                // at start.
-                String category = categoryDetection.detectCategory(modelFr, lemmas);
-
+                String category = processingFrenchMsgsService.processFrenchMsgs(sentence);
                 // Get predefined answer from given category & add to answer.
                 answer = answer + " " + questionAnswerFr.get(category);
-
             }
         }
 
