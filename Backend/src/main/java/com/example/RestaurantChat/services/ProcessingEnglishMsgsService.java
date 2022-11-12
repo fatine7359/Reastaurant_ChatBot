@@ -8,16 +8,21 @@ import com.example.RestaurantChat.posTagsDetection.PostTagsDetection;
 import com.example.RestaurantChat.sentenceDetection.SentenceDetection;
 import com.example.RestaurantChat.tokenization.Tokenizing;
 import opennlp.tools.doccat.DoccatModel;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 
-public class ProcessingEnglishMsgsService {
+public class ProcessingEnglishMsgsService implements ProcessingLanguageMsgsService{
     private CategoryDetection categoryDetection = new CategoryDetection();
     private Lemmatization lemmatization = new Lemmatization();
     private Tokenizing tokenizing = new Tokenizing();
     private PostTagsDetection postTagsDetection = new PostTagsDetection();
+    private CategorizerModelTraining categorizerModelTraining = new CategorizerModelTraining();
 
-    public String processEnglishMsgs(String sentence, DoccatModel model) throws IOException {
+    @Override
+    public String processLanguageMsgs(String sentence) throws IOException {
+        // Train categorizer model to the training data we created.
+        DoccatModel model = categorizerModelTraining.trainCategorizerModel();
 
         // Separate words from each sentence using tokenizer.
         String[] tokens = tokenizing.tokenizeSentence(sentence);
@@ -33,8 +38,5 @@ public class ProcessingEnglishMsgsService {
         String category = categoryDetection.detectCategory(model, lemmas);
 
         return category;
-
     }
-
-
 }

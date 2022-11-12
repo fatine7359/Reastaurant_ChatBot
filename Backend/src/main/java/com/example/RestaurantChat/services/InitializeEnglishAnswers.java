@@ -16,7 +16,7 @@ public class InitializeEnglishAnswers {
                 "main dish: 25$ -- 70$\n" +
                 "dessert: 30$ -- 50$\n");
         questionAnswer.put("conversation-continue", "What else can I help you with?");
-        questionAnswer.put("conversation-complete", "Nice chatting with you. Bbye.");
+        questionAnswer.put("conversation-complete", "Nice chatting with you. Bye.");
 
     }
 

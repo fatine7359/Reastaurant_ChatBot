@@ -9,6 +9,7 @@ import com.example.RestaurantChat.models.Message;
 import com.example.RestaurantChat.sentenceDetection.SentenceDetection;
 import com.example.RestaurantChat.tokenization.Tokenizing;
 import opennlp.tools.doccat.DoccatModel;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -21,16 +22,15 @@ public class ProcessingMsgsService {
     private CategorizerModelTraining categorizerModelTraining = new CategorizerModelTraining();
     private SentenceDetection sentenceDetection = new SentenceDetection();
     private LanguageDetector languageDetector = new LanguageDetector();
-
-    private ProcessingEnglishMsgsService processingEnglishMsgsService = new ProcessingEnglishMsgsService();
-    private ProcessingFrenchMsgsService processingFrenchMsgsService = new ProcessingFrenchMsgsService();
     private static Map<String, String> questionAnswer = new HashMap<>();
     private static Map<String, String> questionAnswerFr = new HashMap<>();
-
     private InitializeEnglishAnswers initializeEnglishAnswers = new InitializeEnglishAnswers();
-    
+    private ProcessingLanguageMsgsService processingEnglishMsgsService = new ProcessingEnglishMsgsService();
+    private ProcessingLanguageMsgsService processingFrenchMsgsService = new ProcessingFrenchMsgsService();
+
     public Message processMsg(Message message) throws IOException, InterruptedException {
 
+        //Initilize answers to answer user
         initializeEnglishAnswers.initializeAnswers(questionAnswer);
         initializeEnglishAnswers.initializeFrAnswers(questionAnswerFr);
 
@@ -43,7 +43,7 @@ public class ProcessingMsgsService {
         String answer = "";
 
         // Train categorizer model to the training data we created.
-        DoccatModel model = categorizerModelTraining.trainCategorizerModel();
+        //DoccatModel model = categorizerModelTraining.trainCategorizerModel();
 
         // Take chat inputs from message variable sent by frontend.
         String userInput = message.getText();
@@ -58,13 +58,13 @@ public class ProcessingMsgsService {
         for (String sentence : sentences) {
 
             if (lang.equals("English")) {
-                String category = processingEnglishMsgsService.processEnglishMsgs(sentence, model);
+                String category = processingEnglishMsgsService.processLanguageMsgs(sentence);
                 // Get predefined answer from given category & add to answer.
                 answer = answer + " " + questionAnswer.get(category);
             }
 
             if(lang.equals("French")){
-                String category = processingFrenchMsgsService.processFrenchMsgs(sentence);
+                String category = processingFrenchMsgsService.processLanguageMsgs(sentence);
                 // Get predefined answer from given category & add to answer.
                 answer = answer + " " + questionAnswerFr.get(category);
             }

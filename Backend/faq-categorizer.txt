@@ -2,4 +2,4 @@ greeting	 hi hi. hello how are you ? hey . hows it going good morning good eveni
 conversation-continue	 ok wow great oh is it ? oh ohh Thats great Good Really hmm lemme think hm hmmm hmmmmm
 price-inquiry	 What's the price ? What's the cost ? How much is price? How much it costs ? price cost money how much. how much?
 menu-inquiry	 What do you have on the menu ? What's on the menu ? What does this restaurant offer ? What is the composition of your menu ? what's on the menu today ? Can you tell me about menu ? What are the possible dishes that we can have ? Tell me about the menu.
-conversation-complete	 Thanks done that's all thats it. thats it I am done Thank you for information Thank. thanks. thank you. thanks nothing else thats it.
+conversation-complete	 Thank you. done that's all thats it. thats it I am done Thank you for information Thank. thanks. thank you. thanks nothing else thats it.

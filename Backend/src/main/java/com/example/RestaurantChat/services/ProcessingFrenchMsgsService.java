@@ -6,18 +6,19 @@ import com.example.RestaurantChat.categoryDetection.CategoryDetection;
 import com.example.RestaurantChat.posTagsDetection.PostTagsDetection;
 import com.example.RestaurantChat.tokenization.Tokenizing;
 import opennlp.tools.doccat.DoccatModel;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 
-public class ProcessingFrenchMsgsService {
+public class ProcessingFrenchMsgsService implements ProcessingLanguageMsgsService{
     private CategoryDetection categoryDetection = new CategoryDetection();
     private Lemmatization lemmatization = new Lemmatization();
     private Tokenizing tokenizing = new Tokenizing();
     private PostTagsDetection postTagsDetection = new PostTagsDetection();
     private CategorizerModelTraining categorizerModelTraining = new CategorizerModelTraining();
 
-    public String processFrenchMsgs(String sentence) throws IOException {
-
+    @Override
+    public String processLanguageMsgs(String sentence) throws IOException {
         // Train categorizer model to the training data we created.
         DoccatModel modelFr = categorizerModelTraining.trainCategorizerModelFr();
 
@@ -33,6 +34,5 @@ public class ProcessingFrenchMsgsService {
         // Determine category using lemmatized tokens used a mode that we trained
         // at start.
         return categoryDetection.detectCategory(modelFr, lemmas);
-
     }
 }
