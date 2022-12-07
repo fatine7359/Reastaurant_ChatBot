@@ -1,0 +1,27 @@
+
+<div class="container">
+
+    <div class="img">
+
+    </div>
+
+    <div class="formulaire">
+
+        <form [formGroup]="signUpForm">
+            <!-- <input type="text" id="femail" name="femail" formControlName="username"  placeholder="username" class="input"><br><br> -->
+            <!-- <label for="femail">email:</label><br> -->
+            <input type="text" id="femail" name="femail" formControlName="email" placeholder="email" class="input"><br><br>
+            <!-- <label for="fpass">password:</label><br> -->
+            <input type="password" id="fpass" name="fpass" formControlName="password" placeholder="password" class="input"><br><br>
+    
+            <div>
+                <div>Already have an account? <a (click)="goToSignin()">Signin</a></div>
+            </div>
+            <!-- <input type="submit" title="SignIn" > -->
+            <button (click)="signUp()" type="submit" class="submit">SignUp</button>
+        </form>
+
+    </div>
+
+</div>
+

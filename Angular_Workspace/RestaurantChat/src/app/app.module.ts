@@ -1,3 +1,4 @@
+import { AuthenticationService } from './pages/services/authentication.service';
 import { ChatBotModule } from './chat-bot/chat-bot.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,8 +16,21 @@ import { MatIconModule } from '@angular/material/icon';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MessagingService } from './chat-bot/services/messaging.service';
+import { SigninComponent } from './pages/signin/signin.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes : Routes = [
+  {path : 'signup', component : SignupComponent},
+  {path : 'signin', component : SigninComponent}
+]
 
 
 @NgModule({
@@ -26,11 +40,14 @@ import { MessagingService } from './chat-bot/services/messaging.service';
     FooterComponent,
     HomeComponent,
     MenuComponent,
-    AboutComponent
+    AboutComponent,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule.forRoot(appRoutes),
     MatIconModule,
     ChatBotModule,
     FontAwesomeModule,
@@ -38,11 +55,17 @@ import { MessagingService } from './chat-bot/services/messaging.service';
     HttpClientModule,
     ServicesModule,
     FormsModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFirestoreModule,
+    AngularFireDatabaseModule,
     
   
   
   ],
-  providers: [MessagingService],
+  providers: [MessagingService, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

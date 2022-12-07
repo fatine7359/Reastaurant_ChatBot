@@ -11,21 +11,6 @@ export class MessagingService {
 
   constructor( private http :HttpClient) { }
 
-
-  // options: {
-  //   headers?: HttpHeaders | {[header: string]: string | string[]},
-  //   observe?: 'body' | 'events' | 'response',
-  //   params?: HttpParams|{[param: string]: string | number | boolean | ReadonlyArray<string | number | boolean>},
-  //   reportProgress?: boolean,
-  //   responseType?: 'arraybuffer'|'blob'|'json'|'text',
-  //   withCredentials?: boolean,
-  // }
-
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
- }
-
   sendMsg(text : string){
 
     let message : Message = new Message(text, "10/26/2022", true);

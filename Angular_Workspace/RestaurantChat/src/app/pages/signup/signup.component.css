@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+}
+
+.img{
+    background-image: url("/assets/img/macaron.jpg");
+    width: 500px;
+    height: 500px;
+}
