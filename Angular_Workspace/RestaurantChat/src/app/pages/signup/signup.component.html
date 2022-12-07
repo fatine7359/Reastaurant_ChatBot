@@ -1,20 +1,21 @@
-
 <div class="container">
 
     <div class="img">
-
+        <img src="/assets/img/macaron.jpg" width="600px" height="570px">
     </div>
 
     <div class="formulaire">
 
+        <div id="title">Create an account</div>
+
         <form [formGroup]="signUpForm">
             <!-- <input type="text" id="femail" name="femail" formControlName="username"  placeholder="username" class="input"><br><br> -->
             <!-- <label for="femail">email:</label><br> -->
-            <input type="text" id="femail" name="femail" formControlName="email" placeholder="email" class="input"><br><br>
+            <input class="input" type="text" id="femail" name="femail" formControlName="email" placeholder="email" class="input"><br><br>
             <!-- <label for="fpass">password:</label><br> -->
-            <input type="password" id="fpass" name="fpass" formControlName="password" placeholder="password" class="input"><br><br>
+            <input class="input" type="password" id="fpass" name="fpass" formControlName="password" placeholder="password" class="input"><br><br>
     
-            <div>
+            <div class="beforeBtn">
                 <div>Already have an account? <a (click)="goToSignin()">Signin</a></div>
             </div>
             <!-- <input type="submit" title="SignIn" > -->
@@ -22,6 +23,8 @@
         </form>
 
     </div>
+
+    
 
 </div>
 

@@ -1,9 +1,58 @@
 .container{
     display: flex;
+    flex: 1;
+    flex-direction: row;
+    /* border: 2px solid red; */
 }
 
 .img{
-    background-image: url("/assets/img/macaron.jpg");
+    /* background-image: url("/assets/img/macaron.jpg");
     width: 500px;
-    height: 500px;
+    height: 500px; */
+    
+    /* border: 2px solid rebeccapurple; */
+    margin-left: 0;
+    padding: 0;
+    margin-top: 5px;
+}
+img{
+    border-radius: 20px;
+
+}
+
+.formulaire {
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+#title{
+    font-weight: bold;
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+.input{
+    width: 350px;
+}
+
+.beforeBtn{
+    margin-left: 75px;
+}
+
+
+.submit{
+    background-color: #f34949;
+    width: 250px;
+    height: 35px;
+    border-radius: 20px;
+    border-color: #f34949;
+    margin-top: 5px;
+    margin-left: 70px;
+}
+
+a{
+    font-weight: bold;
 }

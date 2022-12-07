@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class SigninComponent implements OnInit {
 
   signinForm : FormGroup;
 
-  constructor(private authService : AuthenticationService, private fb : FormBuilder ) { 
+  constructor(private authService : AuthenticationService, private fb : FormBuilder , private router : Router) { 
     this.signinForm = fb.group({
       email: '',
       password: ''
@@ -23,6 +24,10 @@ export class SigninComponent implements OnInit {
 
   signIn(){
     this.authService.signIn(this.signinForm.get('email')?.value, this.signinForm.get('password')?.value);
+  }
+
+  goToSignup(){
+    this.router.navigate(['signup']);
   }
 
 }

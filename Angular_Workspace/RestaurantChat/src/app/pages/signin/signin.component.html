@@ -1,24 +1,30 @@
 <div class="container">
 
-    <div class="formulaire">
-
-        <form [formGroup]="signinForm">
-            <!-- <label for="femail">email:</label><br> -->
-            <input type="text" id="femail" name="femail" formControlName="email" placeholder="email" class="input"><br><br>
-            <!-- <label for="fpass">password:</label><br> -->
-            <input type="password" id="fpass" name="fpass" formControlName="password" placeholder="password" class="input"><br><br>
-            <!-- <input type="submit" title="SignIn" > -->
-            <button (click)="signIn()" class="submit">SignIn</button>
-        </form>
-        
-    </div>
-
-    <div class="image">
-        <div>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU" >
+        <div class="img">
+            <img src="/assets/img/macaron.jpg" width="600px" height="570px">
         </div>
+    
+        <div class="formulaire">
+    
+            <div id="title">Create an account</div>
+    
+            <form [formGroup]="signinForm">
+                <!-- <input type="text" id="femail" name="femail" formControlName="username"  placeholder="username" class="input"><br><br> -->
+                <!-- <label for="femail">email:</label><br> -->
+                <input class="input" type="text" id="femail" name="femail" formControlName="email" placeholder="email" class="input"><br><br>
+                <!-- <label for="fpass">password:</label><br> -->
+                <input class="input" type="password" id="fpass" name="fpass" formControlName="password" placeholder="password" class="input"><br><br>
+                <!-- <input type="submit" title="SignIn" > -->
+                <div class="beforeBtn">
+                    <div>Dont' have an account? <a (click)="goToSignup()">Signin</a></div>
+                </div>
+                <button (click)="signIn()" type="submit" class="submit">SignIn</button>
+            </form>
+    
+        </div>
+    
+        
+    
     </div>
     
-
-</div>
 
